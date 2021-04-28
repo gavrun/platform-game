@@ -54,6 +54,8 @@ namespace platform_game
 
         private void RestartGame()
         {
+            //reset motion and progress
+
             jumping = false;
             goLeft = false;
             goRight = false;
@@ -62,11 +64,29 @@ namespace platform_game
 
             txtScore.Text = "Score: " + score;
 
-            foreach (var item in collection)
+            //reset coins
+
+            foreach (Control x in this.Controls)
             {
+                if (x is PictureBox && x.Visible == false)
+                {
+                    x.Visible == true;
+                }
 
             }
 
+            //reset position of player, platforms, and enemies
+
+            player.Left = 23;
+            player.Top = 642;
+
+            enemyOne.Left = 266;
+            enemyTwo.Left = 280;
+
+            horizontalPlatform.Left = 385;
+            verticalPlatform.Top = 546;
+
+            gameTimer.Start();
 
 
         }
