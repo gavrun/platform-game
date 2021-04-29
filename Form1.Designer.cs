@@ -155,9 +155,9 @@ namespace platform_game
             // txtScore
             // 
             this.txtScore.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtScore.Location = new System.Drawing.Point(484, 9);
+            this.txtScore.Location = new System.Drawing.Point(366, 9);
             this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(158, 67);
+            this.txtScore.Size = new System.Drawing.Size(276, 106);
             this.txtScore.TabIndex = 6;
             this.txtScore.Text = "Score: 0";
             this.txtScore.TextAlign = System.Drawing.ContentAlignment.TopRight;

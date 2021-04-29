@@ -100,6 +100,21 @@ namespace platform_game
 
                     }
 
+                    //enemy
+                    if ((string)x.Tag == "enemy")
+                    {
+                        if (player.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            //player looses when collides with enemy
+                            gameTimer.Stop();
+                            isGameOver = true;
+                            //adds a message to score box
+                            txtScore.Text = "Score: 0" + score + Environment.NewLine + "You were killed!";
+                        }
+                    }
+
+
+
                 }
             }
         }
