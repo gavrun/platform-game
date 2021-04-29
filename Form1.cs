@@ -78,6 +78,12 @@ namespace platform_game
                             force = 8;
                             //player repositions on top of a platform
                             player.Top = x.Top - player.Height;
+
+                            if ((string)x.Name == "horizontalPlatform" && goLeft == false || (string)x.Name == "horizontalPlatform" && goRight == false) //fix, move player with the horizontal platform
+                            {
+                                player.Left -= horizontalSpeed;
+                            }
+
                         }
                         //platform is closest to viewer
                         //covers the players blinking side effect causes by the timer
