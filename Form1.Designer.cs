@@ -175,7 +175,7 @@ namespace platform_game
             // horizontalPlatform
             // 
             this.horizontalPlatform.BackColor = System.Drawing.Color.Brown;
-            this.horizontalPlatform.Location = new System.Drawing.Point(385, 113);
+            this.horizontalPlatform.Location = new System.Drawing.Point(341, 124);
             this.horizontalPlatform.Name = "horizontalPlatform";
             this.horizontalPlatform.Size = new System.Drawing.Size(152, 30);
             this.horizontalPlatform.TabIndex = 9;
@@ -195,9 +195,9 @@ namespace platform_game
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Brown;
-            this.pictureBox9.Location = new System.Drawing.Point(0, 113);
+            this.pictureBox9.Location = new System.Drawing.Point(0, 85);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 30);
+            this.pictureBox9.Size = new System.Drawing.Size(246, 30);
             this.pictureBox9.TabIndex = 11;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Tag = "platform";
@@ -205,7 +205,7 @@ namespace platform_game
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Green;
-            this.pictureBox10.Location = new System.Drawing.Point(0, 62);
+            this.pictureBox10.Location = new System.Drawing.Point(0, 34);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(40, 55);
             this.pictureBox10.TabIndex = 12;
