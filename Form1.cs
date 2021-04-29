@@ -117,6 +117,20 @@ namespace platform_game
 
                 }
             }
+
+
+            //horizontal platform motion
+            horizontalPlatform.Left -= horizontalSpeed;
+            //reverse motion
+            if (horizontalPlatform.Left < 0 || horizontalPlatform.Left + horizontalPlatform.Width > this.ClientSize.Width)
+            {
+                horizontalSpeed = -horizontalSpeed;
+            }
+
+
+
+
+
         }
 
         private void KeyIsDown(object sender, KeyEventArgs e)
