@@ -32,7 +32,64 @@ namespace platform_game
 
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
+            txtScore.Text = "Score " + score;
+            //player gravity
+            player.Top += jumpSpeed;
+            //player speed acceleration
+            if (goLeft == true)
+            {
+                player.Left -= playerSpeed;
+            }
+            if (goRight == true)
+            {
+                player.Left += playerSpeed;
+            }
+            //player jump
+            if (jumping == true && force < 0)
+            {
+                jumping = false;
+            }
+            if (jumping == true)
+            {
+                jumping = -8;
+                //how high player jumps
+                force -= 1;
+            }
+            else
+            {
+                jumpSpeed = 10;
+            }
+            
+            
+            
+            foreach (Control x in this.Controls)
+            {
 
+                if (x is PictureBox)
+                {
+
+
+                    if ((string)x.Tag == "platform")
+                    {
+                        //platform collision
+                        if (player.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            //player jumps again
+                            force = 8;
+                            //player repositions on top of a platform
+                            player.Top = x.Top - player.Height;
+                        }
+                        //platform is closest to viewer
+                        //covers the players blinking side effect causes by the timer
+                        x.BringToFront();
+
+
+                    }
+
+
+
+                }
+            }
         }
 
         private void KeyIsDown(object sender, KeyEventArgs e)
