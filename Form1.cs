@@ -18,9 +18,11 @@ namespace platform_game
         int force;
         int score = 0;
         int playerSpeed = 7;
+        
         //platforms
         int horizontalSpeed = 5;
         int verticalSpeed = 3;
+        
         //enemies
         int enemyOneSpeed = 5;
         int enemyTwoSpeed = 3;
@@ -33,8 +35,10 @@ namespace platform_game
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
             txtScore.Text = "Score " + score;
+            
             //player gravity
             player.Top += jumpSpeed;
+            
             //player speed acceleration
             if (goLeft == true)
             {
@@ -44,6 +48,7 @@ namespace platform_game
             {
                 player.Left += playerSpeed;
             }
+            
             //player jump
             if (jumping == true && force < 0)
             {
@@ -60,14 +65,12 @@ namespace platform_game
                 jumpSpeed = 10;
             }
             
-            
             //control rules for objects in game
             foreach (Control x in this.Controls)
             {
                 //all defined by a type of object
                 if (x is PictureBox)
                 {
-
                     //platform
                     if ((string)x.Tag == "platform")
                     {
@@ -83,13 +86,10 @@ namespace platform_game
                             {
                                 player.Left -= horizontalSpeed;
                             }
-
                         }
                         //platform is closest to viewer
                         //covers the players blinking side effect causes by the timer
                         x.BringToFront();
-
-
                     }
 
                     //coin
@@ -102,8 +102,6 @@ namespace platform_game
                             //score increases
                             score++;
                         }
-
-
                     }
 
                     //enemy
@@ -118,15 +116,12 @@ namespace platform_game
                             txtScore.Text = "Score: 0" + score + Environment.NewLine + "You were killed!"; //fix ??
                         }
                     }
-
-
-
                 }
             }
 
-
             //horizontal platform motion
             horizontalPlatform.Left -= horizontalSpeed;
+            
             //reverse motion when touch the form boundary
             if (horizontalPlatform.Left < 0 || horizontalPlatform.Left + horizontalPlatform.Width > this.ClientSize.Width) //reverse motion by location ??
             {
@@ -135,15 +130,16 @@ namespace platform_game
 
             //vertical platform motion
             verticalPlatform.Top += verticalSpeed;
+            
             //reverse motion by location
             if (verticalPlatform.Top < 150 || verticalPlatform.Top > 546)
             {
                 verticalSpeed = -verticalSpeed;
             }
 
-
             //first enemy motion
             enemyOne.Left -= enemyOneSpeed;
+            
             if (enemyOne.Left < pictureBox2.Left || enemyOne.Left + enemyOne.Width > pictureBox2.Left + pictureBox2.Width)
             {
                 enemyOneSpeed = -enemyOneSpeed;
@@ -151,12 +147,14 @@ namespace platform_game
             
             //second enemy motion opposite
             enemyTwo.Left += enemyTwoSpeed;
+            
             if (enemyTwo.Left < pictureBox5.Left || enemyTwo.Left + enemyTwo.Width > pictureBox5.Left + pictureBox5.Width)
             {
                 enemyTwoSpeed = -enemyTwoSpeed;
             }
 
-            //player looses when jumps off the bottom (if botton equals the form width happens outside the form)
+            //player looses when jumps off the bottom
+            //(this happens outside the form if bottom platform width equals the form width)
             if (player.Top + player.Height > this.ClientSize.Height + 50)
             {
                 gameTimer.Stop();
@@ -208,7 +206,8 @@ namespace platform_game
             {
                 jumping = false;
             }
-            //option to reset while playing
+            
+            //option to reset game while playing
             if (e.KeyCode == Keys.Enter && isGameOver == true)
             {
                 RestartGame();
@@ -217,13 +216,16 @@ namespace platform_game
 
         private void RestartGame()
         {
-            //reset motion and progress
+            //reset motion 
             jumping = false;
             goLeft = false;
             goRight = false;
+
+            //reset progress
             isGameOver = false;
             score = 0;
             txtScore.Text = "Score: " + score;
+            
             //reset coins
             foreach (Control x in this.Controls)
             {
@@ -232,13 +234,16 @@ namespace platform_game
                     x.Visible = true;
                 }
             }
-            //reset position of player, platforms, and enemies
+
+            //reset position of the player, platforms, and enemies
             player.Left = 23;
             player.Top = 642;
             enemyOne.Left = 266;
             enemyTwo.Left = 280;
             horizontalPlatform.Left = 385;
             verticalPlatform.Top = 546;
+
+            //reset timer
             gameTimer.Start();
         }
     }
