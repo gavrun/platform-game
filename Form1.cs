@@ -89,7 +89,7 @@ namespace platform_game
                     //coin
                     if ((string)x.Tag == "coin")
                     {
-                        if (player.Bounds.IntersectsWith(x.Bounds))
+                        if (player.Bounds.IntersectsWith(x.Bounds) && x.Visible == true) //fix, increment score only once
                         {
                             //player collects a coin
                             x.Visible = false;
