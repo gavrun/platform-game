@@ -115,7 +115,7 @@ namespace platform_game
                             gameTimer.Stop();
                             isGameOver = true;
                             //adds a message to score box
-                            txtScore.Text = "Score: 0" + score + Environment.NewLine + "You were killed!";
+                            txtScore.Text = "Score: 0" + score + Environment.NewLine + "You were killed!"; //fix ??
                         }
                     }
 
@@ -155,6 +155,15 @@ namespace platform_game
             {
                 enemyTwoSpeed = -enemyTwoSpeed;
             }
+
+            //player looses when jumps off the bottom (if botton not equals the form width)
+            if (player.Top + player.Height > this.ClientSize.Height + 50)
+            {
+                gameTimer.Stop();
+                isGameOver = true;
+                txtScore.Text = "Score: " + score + Environment.NewLine + "You fell off!"
+            }
+
 
 
         }
