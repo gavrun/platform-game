@@ -164,7 +164,17 @@ namespace platform_game
                 txtScore.Text = "Score: " + score + Environment.NewLine + "You fell off!";
             }
 
-
+            //player wins when all coins collected and goes to the door
+            if (player.Bounds.IntersectsWith(door.Bounds) && score == 26)
+            {
+                gameTimer.Stop();
+                isGameOver = true;
+                txtScore.Text = "Score: " + score + Environment.NewLine + "You survived!";
+            }
+            else
+            {
+                txtScore.Text = "Score: " + score + Environment.NewLine + "Pick up coins and run.."; //show "return for coins" when touches the door?
+            }
 
         }
 
