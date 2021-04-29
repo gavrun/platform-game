@@ -41,7 +41,7 @@ namespace platform_game
             this.horizontalPlatform = new System.Windows.Forms.PictureBox();
             this.verticalPlatform = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.door = new System.Windows.Forms.PictureBox();
             this.enemyOne = new System.Windows.Forms.PictureBox();
             this.enemyTwo = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -71,7 +71,7 @@ namespace platform_game
             ((System.ComponentModel.ISupportInitialize)(this.horizontalPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.verticalPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.door)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyTwo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -202,14 +202,14 @@ namespace platform_game
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Tag = "platform";
             // 
-            // pictureBox10
+            // door
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Green;
-            this.pictureBox10.Location = new System.Drawing.Point(0, 34);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(40, 55);
-            this.pictureBox10.TabIndex = 12;
-            this.pictureBox10.TabStop = false;
+            this.door.BackColor = System.Drawing.Color.Green;
+            this.door.Location = new System.Drawing.Point(0, 34);
+            this.door.Name = "door";
+            this.door.Size = new System.Drawing.Size(40, 55);
+            this.door.TabIndex = 12;
+            this.door.TabStop = false;
             // 
             // enemyOne
             // 
@@ -419,7 +419,7 @@ namespace platform_game
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.door);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.verticalPlatform);
             this.Controls.Add(this.horizontalPlatform);
@@ -447,7 +447,7 @@ namespace platform_game
             ((System.ComponentModel.ISupportInitialize)(this.horizontalPlatform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.verticalPlatform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.door)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyOne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyTwo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -483,7 +483,7 @@ namespace platform_game
         private System.Windows.Forms.PictureBox horizontalPlatform;
         private System.Windows.Forms.PictureBox verticalPlatform;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox door;
         private System.Windows.Forms.PictureBox enemyOne;
         private System.Windows.Forms.PictureBox enemyTwo;
         private System.Windows.Forms.PictureBox pictureBox11;
