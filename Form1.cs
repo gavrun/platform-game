@@ -156,12 +156,12 @@ namespace platform_game
                 enemyTwoSpeed = -enemyTwoSpeed;
             }
 
-            //player looses when jumps off the bottom (if botton not equals the form width)
+            //player looses when jumps off the bottom (if botton equals the form width happens outside the form)
             if (player.Top + player.Height > this.ClientSize.Height + 50)
             {
                 gameTimer.Stop();
                 isGameOver = true;
-                txtScore.Text = "Score: " + score + Environment.NewLine + "You fell off!"
+                txtScore.Text = "Score: " + score + Environment.NewLine + "You fell off!";
             }
 
 
