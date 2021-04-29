@@ -68,7 +68,7 @@ namespace platform_game
                 if (x is PictureBox)
                 {
 
-
+                    //platform
                     if ((string)x.Tag == "platform")
                     {
                         //platform collision
@@ -86,7 +86,19 @@ namespace platform_game
 
                     }
 
+                    //coin
+                    if ((string)x.Tag == "coin")
+                    {
+                        if (player.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            //player collects a coin
+                            x.Visible = false;
+                            //score increases
+                            score++;
+                        }
 
+
+                    }
 
                 }
             }
