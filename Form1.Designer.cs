@@ -197,7 +197,7 @@ namespace platform_game
             this.pictureBox9.BackColor = System.Drawing.Color.Brown;
             this.pictureBox9.Location = new System.Drawing.Point(0, 85);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(246, 30);
+            this.pictureBox9.Size = new System.Drawing.Size(82, 30);
             this.pictureBox9.TabIndex = 11;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Tag = "platform";

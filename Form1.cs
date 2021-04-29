@@ -121,14 +121,19 @@ namespace platform_game
 
             //horizontal platform motion
             horizontalPlatform.Left -= horizontalSpeed;
-            //reverse motion
-            if (horizontalPlatform.Left < 0 || horizontalPlatform.Left + horizontalPlatform.Width > this.ClientSize.Width)
+            //reverse motion when touch the form boundary
+            if (horizontalPlatform.Left < 0 || horizontalPlatform.Left + horizontalPlatform.Width > this.ClientSize.Width) //reverse motion by location ??
             {
                 horizontalSpeed = -horizontalSpeed;
             }
 
-
-
+            //vertical platform motion
+            verticalPlatform.Top += verticalSpeed;
+            //reverse motion by location
+            if (verticalPlatform.Top < 150 || verticalPlatform.Top > 546)
+            {
+                verticalSpeed = -verticalSpeed;
+            }
 
 
         }
