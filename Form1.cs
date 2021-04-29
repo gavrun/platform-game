@@ -61,10 +61,10 @@ namespace platform_game
             }
             
             
-            
+            //control rules for objects in game
             foreach (Control x in this.Controls)
             {
-
+                //all defined by a type of object
                 if (x is PictureBox)
                 {
 
@@ -133,6 +133,21 @@ namespace platform_game
             if (verticalPlatform.Top < 150 || verticalPlatform.Top > 546)
             {
                 verticalSpeed = -verticalSpeed;
+            }
+
+
+            //first enemy motion
+            enemyOne.Left -= enemyOneSpeed;
+            if (enemyOne.Left < pictureBox2.Left || enemyOne.Left + enemyOne.Width > pictureBox2.Left + pictureBox2.Width)
+            {
+                enemyOneSpeed = -enemyOneSpeed;
+            }
+            
+            //second enemy motion opposite
+            enemyTwo.Left += enemyTwoSpeed;
+            if (enemyTwo.Left < pictureBox5.Left || enemyTwo.Left + enemyTwo.Width > pictureBox5.Left + pictureBox5.Width)
+            {
+                enemyTwoSpeed = -enemyTwoSpeed;
             }
 
 
