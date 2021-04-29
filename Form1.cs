@@ -51,7 +51,7 @@ namespace platform_game
             }
             if (jumping == true)
             {
-                jumping = -8;
+                jumpSpeed = -8;
                 //how high player jumps
                 force -= 1;
             }
@@ -143,7 +143,7 @@ namespace platform_game
             {
                 if (x is PictureBox && x.Visible == false)
                 {
-                    x.Visible == true;
+                    x.Visible = true;
                 }
             }
             //reset position of player, platforms, and enemies
